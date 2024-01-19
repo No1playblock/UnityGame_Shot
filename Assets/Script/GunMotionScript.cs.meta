@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7cc144126c725e74d8a70fdb5835fadd
+timeCreated: 1560140808
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - anim: {instanceID: 0}
+  - NobulletText: {instanceID: 0}
+  - ShotSFX: {fileID: 8300000, guid: e5376d23be3b3374fad3bc72c7d746f0, type: 3}
+  - myAudio: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

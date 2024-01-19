@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 4520f4a8bb4013c40bcf0ea2e831955d
+timeCreated: 1560093299
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - ResumeText: {instanceID: 0}
+  - ScoreText: {instanceID: 0}
+  - CoinText: {instanceID: 0}
+  - RoundText: {instanceID: 0}
+  - BulletText: {instanceID: 0}
+  - gameOverScoreText: {instanceID: 0}
+  - gameOverHighScoreText: {instanceID: 0}
+  - reload: {fileID: 8300000, guid: e0ac4e159a4caa04eb5a59aaecf2109a, type: 3}
+  - Shoot: {fileID: 8300000, guid: a4c3867892e40b843808d4ccecd3eef0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
