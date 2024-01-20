@@ -45,8 +45,7 @@ public class ObjectScript : MonoBehaviour {
         
         if (enableSpawn)
         {
-
-            //t = (GameObject)Instantiate(target[count], new Vector3(-10.0f, randomY, 0.0f), Quaternion.identity); //랜덤한 위치와, 화면 제일 위에서 Enemy를 하나 생성해줍니다.
+            
             target[count].SetActive(true);
             target[count].transform.position = new Vector3(-16.4f, randomY, 0.0f);
             
@@ -62,38 +61,25 @@ public class ObjectScript : MonoBehaviour {
             if (count == maxCount)
                 count = 0;
 
-
-
         }
-
-
     }
 
     public void ExecuteSpawn()
     {
-
         StartCoroutine(spawn());
     }
 
     IEnumerator spawn()
     {
         yield return new WaitForSeconds(AllWorldScript.ExplainCount);                  //1초있다가 오크통 생성
-        Debug.Log("spawn 실행");
-        Debug.Log("objectnum" + AllWorldScript.objectnum);
+
         while (AllWorldScript.objectnum != 0)                               //objectnum 이 0이면 끝
         {
             yield return new WaitForSeconds(0.5f);
             oakbottle();
-            
-            
-            Debug.Log("spawn" + AllWorldScript.objectnum);
-            
+ 
         }
         StopCoroutine(spawn());
-        /*yield return new WaitForSeconds(AllWorldScript.destroycount + AllWorldScript.tumcount);                //5초뒤에도 0이면
-        if (AllWorldScript.objectnum == 0)
-            GameObject.Find("GameMgr").GetComponent<OnchangeScript>().gameOverFunc();*/
-
     }
     void oakbottle()
     {
@@ -113,20 +99,16 @@ public class ObjectScript : MonoBehaviour {
         }
 
     }
-    public void objectSpawn()
+    public void objectSpawn()               //오브젝트 풀링
     {
-        
         target = new GameObject[maxCount];               //오브젝트가 저장되어있는 변수
-            for (int j = 0; j < maxCount; j++)
-            {
-                
-                GameObject gm = (GameObject)Instantiate(prefabs, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-                
-
-                gm.SetActive(false);                     //Active를 비활성화   
-                target[j] = gm;                         //전역변수 _pool에 집어넣는다.
-            }
-  
+        for (int j = 0; j < maxCount; j++)
+        {   
+            GameObject gm = (GameObject)Instantiate(prefabs, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+             
+            gm.SetActive(false);                     //Active를 비활성화       
+            target[j] = gm;                         //전역변수 _pool에 집어넣는다.
+        }
     }
 
     private void Awake()
